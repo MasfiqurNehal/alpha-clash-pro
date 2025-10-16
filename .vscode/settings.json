@@ -1,13 +1,14 @@
 {
-    "editor.quickSuggestions": {
-        //         "other": false,
-        "comments": false
-        //         "strings": false
-    },
-    //     "editor.suggestOnTriggerCharacters": false,
-    //     "editor.parameterHints.enabled": false,
-    "editor.inlineSuggest.enabled": false
-    //     "editor.wordBasedSuggestions": false,
-    //     "editor.acceptSuggestionOnEnter": "off",
-    //     "editor.tabCompletion": "off"
+  "editor.quickSuggestions": {
+    "comments": false
+  },
+  "editor.inlineSuggest.enabled": false,
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "prettier.singleQuote": false,
+  "prettier.tabWidth": 2,
+  "prettier.semi": true,
+  "prettier.htmlWhitespaceSensitivity": "ignore",
+  "prettier.bracketSameLine": true
 }
