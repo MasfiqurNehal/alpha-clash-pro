@@ -8,10 +8,15 @@ function showElementbyId(elementId) {
   element.classList.remove("hidden");
 }
 
-// add background color
+// add background color to the keyboard text
 function setBackgroundColorById(elementId) {
   const element = document.getElementById(elementId);
   element.classList.add("bg-orange-400");
+}
+// remove background color to the keyboard text
+function removeBackgroundColorById(elementId) {
+  const element = document.getElementById(elementId);
+  element.classList.remove("bg-orange-400");
 }
 
 function getARandomAlphabet() {
