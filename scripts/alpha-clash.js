@@ -1,14 +1,11 @@
-// amra simple vabe korlam without function
-// function play() {
-//   const homeSection = document.getElementById("home-screen");
-//   homeSection.classList.add("hidden");
-
-//   const playGroundSection = document.getElementById("play-ground");
-//   playGroundSection.classList.remove("hidden");
-// }
 function handleKeyboardButton(event) {
   const playerPressed = event.key;
   console.log("player pressed", playerPressed);
+
+  // stop the game if pressed 'Esc'
+  if (playerPressed === "Escape") {
+    gameOver();
+  }
 
   //   get the expected to press
   const currentAlphabetElement = document.getElementById("show-alphabet");
@@ -43,10 +40,13 @@ function handleKeyboardButton(event) {
     const currentLife = parseInt(currentLifeText);
 
     // 2. Reduce the Life
-    const newLife = currentLife - 1;
+    const updateLife = currentLife - 1;
 
     // 3. show the Life
-    currentLifeElement.innerText = newLife;
+    currentLifeElement.innerText = updateLife;
+    if (updateLife === -1) {
+      gameOver();
+    }
   }
 }
 
@@ -69,4 +69,20 @@ function play() {
   hideElementbyId("home-screen");
   showElementbyId("play-ground");
   continueGame();
+}
+
+// game over function and go to the score pages
+function gameOver() {
+  hideElementbyId("play-ground");
+  showElementbyId("score-Page");
+  const lastScore = document.getElementById("current-score");
+  const lastScoreWas = lastScore.innerText;
+  setElementValues("final-scoreShow", lastScoreWas);
+}
+
+function playAgain() {
+  hideElementbyId("score-Page");
+  showElementbyId("play-ground");
+  setElementValues("current-score", 0);
+  setElementValues("current-life", 5);
 }
